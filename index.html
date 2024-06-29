@@ -599,9 +599,7 @@
     		</div>
     	</div>
     </section>
-
-
-    <section class="ftco-section" id="project-section">
+	<section class="ftco-section" id="project-section">
 		<div class="container">
 		  <div class="row justify-content-center mb-5 pb-5">
 			<div class="col-md-7 heading-section text-center ftco-animate">
@@ -611,11 +609,21 @@
 			</div>
 		  </div>
 	  
-		  <div class="row d-flex">
-			<div class="col-md-6 d-flex ftco-animate">
+		  <!-- Filter Buttons -->
+		  <div class="row mb-5">
+			<div class="col text-center">
+			  <button class="btn btn-primary filter-button" data-filter="all">All</button>
+			  <button class="btn btn-primary filter-button" data-filter="category1">Category 1</button>
+			  <button class="btn btn-primary filter-button" data-filter="category2">Category 2</button>
+			  <button class="btn btn-primary filter-button" data-filter="category3">Category 3</button>
+			</div>
+		  </div>
+	  
+		  <!-- Project Entries -->
+		  <div class="row d-flex project-entries">
+			<div class="col-md-6 d-flex ftco-animate project-entry" data-category="category1">
 			  <div class="blog-entry justify-content-end">
-				<a href="https://github.com/mohitsarin-tamu/Fine-Tuning-Meta-Llama2" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');">
-				</a>
+				<a href="https://github.com/mohitsarin-tamu/Fine-Tuning-Meta-Llama2" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');"></a>
 				<div class="text mt-3 float-right d-block">
 				  <h3 class="heading"><a href="https://github.com/mohitsarin-tamu/Fine-Tuning-Meta-Llama2">Fine Tuning Meta Llama2 Model</a></h3>
 				  <p>Summary.</p>
@@ -623,23 +631,19 @@
 			  </div>
 			</div>
 	  
-			<div class="col-md-6 d-flex ftco-animate">
+			<div class="col-md-6 d-flex ftco-animate project-entry" data-category="category2">
 			  <div class="blog-entry justify-content-end">
-				<a href="https://github.com/example/project2" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');">
-				</a>
+				<a href="https://github.com/example/project2" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');"></a>
 				<div class="text mt-3 float-right d-block">
 				  <h3 class="heading"><a href="https://github.com/example/project2">Project 2</a></h3>
 				  <p>Summary.</p>
 				</div>
 			  </div>
 			</div>
-		  </div>
 	  
-		  <div class="row d-flex">
-			<div class="col-md-6 d-flex ftco-animate">
+			<div class="col-md-6 d-flex ftco-animate project-entry" data-category="category3">
 			  <div class="blog-entry justify-content-end">
-				<a href="https://github.com/example/project3" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');">
-				</a>
+				<a href="https://github.com/example/project3" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');"></a>
 				<div class="text mt-3 float-right d-block">
 				  <h3 class="heading"><a href="https://github.com/example/project3">Project 3</a></h3>
 				  <p>Summary.</p>
@@ -647,23 +651,19 @@
 			  </div>
 			</div>
 	  
-			<div class="col-md-6 d-flex ftco-animate">
+			<div class="col-md-6 d-flex ftco-animate project-entry" data-category="category1">
 			  <div class="blog-entry justify-content-end">
-				<a href="https://github.com/example/project4" class="block-20 zoom-effect" style="background-image: url('images/proj_4.jpg');">
-				</a>
+				<a href="https://github.com/example/project4" class="block-20 zoom-effect" style="background-image: url('images/proj_4.jpg');"></a>
 				<div class="text mt-3 float-right d-block">
 				  <h3 class="heading"><a href="https://github.com/example/project4">Project 4</a></h3>
 				  <p>Summary.</p>
 				</div>
 			  </div>
 			</div>
-		  </div>
 	  
-		  <div class="row d-flex">
-			<div class="col-md-6 d-flex ftco-animate">
+			<div class="col-md-6 d-flex ftco-animate project-entry" data-category="category2">
 			  <div class="blog-entry justify-content-end">
-				<a href="https://github.com/example/project5" class="block-20 zoom-effect" style="background-image: url('images/proj_5.jpg');">
-				</a>
+				<a href="https://github.com/example/project5" class="block-20 zoom-effect" style="background-image: url('images/proj_5.jpg');"></a>
 				<div class="text mt-3 float-right d-block">
 				  <h3 class="heading"><a href="https://github.com/example/project5">Project 5</a></h3>
 				  <p>Summary.</p>
@@ -671,10 +671,9 @@
 			  </div>
 			</div>
 	  
-			<div class="col-md-6 d-flex ftco-animate">
+			<div class="col-md-6 d-flex ftco-animate project-entry" data-category="category3">
 			  <div class="blog-entry justify-content-end">
-				<a href="https://github.com/example/project6" class="block-20 zoom-effect" style="background-image: url('images/proj_6.jpg');">
-				</a>
+				<a href="https://github.com/example/project6" class="block-20 zoom-effect" style="background-image: url('images/proj_6.jpg');"></a>
 				<div class="text mt-3 float-right d-block">
 				  <h3 class="heading"><a href="https://github.com/example/project6">Project 6</a></h3>
 				  <p>Summary.</p>
@@ -682,9 +681,60 @@
 			  </div>
 			</div>
 		  </div>
-	  
 		</div>
+	  
+		<!-- Inline CSS -->
+		<style>
+		  /* Global styles */
+		  body {
+			font-family: Arial, sans-serif;
+			line-height: 1.6;
+		  }
+	  
+		  /* Button styles */
+		  .btn {
+			padding: 10px 20px;
+			margin: 5px;
+			cursor: pointer;
+			background-color: #007bff;
+			color: #fff;
+			border: none;
+			border-radius: 5px;
+		  }
+	  
+		  .btn:hover {
+			background-color: #0056b3;
+		  }
+	  
+		  /* Project entry styles */
+		  .project-entry {
+			display: flex;
+			margin-bottom: 30px;
+		  }
+	  
+		  .project-entry .blog-entry {
+			width: 100%;
+		  }
+	  
+		  .project-entry .block-20 {
+			display: block;
+			background-size: cover;
+			background-position: center center;
+			height: 200px; /* Adjust height as needed */
+			border-radius: 5px;
+		  }
+	  
+		  .project-entry .text {
+			padding: 20px;
+		  }
+	  
+		  /* Other styles for your layout */
+		</style>
+	  
+		<!-- Script inclusion -->
+		<script src="scripts.js"></script>
 	  </section>
+	  
 	  
 	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
       <div class="container">
