@@ -109,6 +109,11 @@
   transform: scale(1.1);
 }
 
+.coursework {
+	color: #fff; /* Adjust the text color */
+	background-color: #000; /* Adjust the background color */
+	padding: 10px; /* Add some padding for better readability */
+}
 
 </style>
 
@@ -465,7 +470,7 @@
 					<h2>Master of Science</h2>
 					<span class="position">2023-2025</span>
 					<p class="mt-4">GPA: 4.0/4.0</p>
-					<div class="relevant-coursework-button" onclick="toggleCoursework('tam-coursework')" style="cursor: pointer; color: #007bff; text-decoration: underline;">Relevant Coursework</div>
+					<button class="btn btn-primary filter-button" onclick="toggleCoursework('tam-coursework')">Relevant Coursework</button>
 					<ul id="tam-coursework" class="coursework" style="display: none; margin-top: 10px;">
 						<li>Course 1</li>
 						<li>Course 2</li>
@@ -479,7 +484,7 @@
 						<li>Course 10</li>
 					</ul>
 				</div>
-			</div>
+			</div>	
 		
 			<div class="col-md-6">
 				<div class="resume-wrap ftco-animate">
@@ -488,9 +493,8 @@
 					<h2>Bachelor of Technology</h2>
 					<span class="position">2016-2020</span>
 					<p class="mt-4">GPA: 9.19/10.0</p>
-					<div class="relevant-coursework-button" onclick="toggleCoursework('nit-coursework')" style="cursor: pointer; color: #007bff; text-decoration: underline;">Relevant Coursework</div>
-					<ul id="nit-coursework" class="coursework" style="display: none; margin-top: 10px;">
-						<li>Course 1</li>
+					<button class="btn btn-primary filter-button" onclick="toggleCoursework('tam-coursework')">Relevant Coursework</button>
+					<ul id="tam-coursework" class="coursework" style="display: none; margin-top: 10px;">
 						<li>Course 2</li>
 						<li>Course 3</li>
 						<li>Course 4</li>

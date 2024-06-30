@@ -6,3 +6,4 @@ function toggleCoursework(id) {
         coursework.style.display = "none";
     }
 }
+
