@@ -461,7 +461,6 @@
 			<div class="underline"></div>
 		</div>
 		<br>
-		
 		<div class="row">
 			<div class="col-md-6">
 				<div class="resume-wrap ftco-animate">
@@ -484,7 +483,7 @@
 						<li>Course 10</li>
 					</ul>
 				</div>
-			</div>	
+			</div>
 		
 			<div class="col-md-6">
 				<div class="resume-wrap ftco-animate">
@@ -493,8 +492,8 @@
 					<h2>Bachelor of Technology</h2>
 					<span class="position">2016-2020</span>
 					<p class="mt-4">GPA: 9.19/10.0</p>
-					<button class="btn btn-primary filter-button" onclick="toggleCoursework('tam-coursework')">Relevant Coursework</button>
-					<ul id="tam-coursework" class="coursework" style="display: none; margin-top: 10px;">
+					<button class="btn btn-primary filter-button" onclick="toggleCoursework('nit-coursework')">Relevant Coursework</button>
+					<ul id="nit-coursework" class="coursework" style="display: none; margin-top: 10px;">
 						<li>Course 2</li>
 						<li>Course 3</li>
 						<li>Course 4</li>
@@ -509,7 +508,17 @@
 			</div>
 		</div>
 		
-		<script src="path/to/your/js/toggleCoursework.js"></script>
+		<script>
+		function toggleCoursework(id) {
+			var coursework = document.getElementById(id);
+			if (coursework.style.display === "none" || coursework.style.display === "") {
+				coursework.style.display = "block";
+			} else {
+				coursework.style.display = "none";
+			}
+		}
+		</script>
+		
 				
 		<div class="row">
 			<h1 class="big-4">Certifications</h1>
@@ -668,7 +677,7 @@
 			  <div class="blog-entry justify-content-end">
 				<a href="https://github.com/example/project5" class="block-20 zoom-effect" style="background-image: url('images/proj_5.jpg');"></a>
 				<div class="text mt-3 float-right d-block">
-				  <h3 class="heading"><a href="https://github.com/example/project5">Project 5</a></h3>
+				  <h3 class="heading"><a href="https://github.com/example/project5">Retrieval Augmented Generation using LlamaIndex</a></h3>
 				  <p>Summary.</p>
 				</div>
 			  </div>
