@@ -208,35 +208,53 @@
     </section>
   
 
-    <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+	<section class="ftco-about img ftco-section ftco-no-pb text-center" id="about-section">
 		<div class="container">
-		  <div class="row">
-			<div class="col-md-12 heading-section ftco-animate">
+		  <div class="row justify-content-center">
+			<div class="col-md-10 heading-section ftco-animate">
 			  <h1 class="big">About</h1>
 			  <h2 class="mb-4">About Me</h2>
 	  
-			  <ul>
-				<li>Pursuing a Master of Science in Computer Science at Texas A&M University, with an expected graduation date of May 2025.</li>
-				<li>Completed a Bachelor of Technology in Electronics and Communication Engineering from the National Institute of Technology, Raipur, India, achieving a GPA of 9.19/10.</li>
-				<li>Maintaining a perfect GPA of 4.0/4.0 in the ongoing master's program, with skills in programming languages such as C, Python, and Java, alongside proficiency in various Machine Learning models and Python libraries.</li>
-				<li>3 years of full-time professional experience as a Software Engineer focusing on Machine Learning, API Development, Data Analytics, and Cloud.</li>
-				<li>Over 1 year of internship/part-time experience in developing ML models for classification problems, with additional experience in computer vision algorithms and NLP algorithms.</li>
+			  <ul class="text-left mx-auto" style="max-width: 800px;">
+				<li>Pursuing a Master of Science in Computer Science at Texas A&M University, graduating in May 2025 with a GPA of 4.0/4.0.</li>
+				<li>Earned a Bachelor of Technology in Electronics and Communication Engineering from the National Institute of Technology, Raipur, with a GPA of 9.19/10.</li>
+				<li>3+ years of professional experience as a Software Engineer, developing and integrating 10+ real-time and batch REST/SOAP APIs, enhancing error handling architecture, and building CI/CD pipelines using Jenkins, Docker, and Kubernetes.</li>
+				<li>Worked across major cloud platforms including AWS and Azure, deploying scalable services and automating ETL pipelines.</li>
+				<li>Delivered monthly client presentations and technical demos for projects valued at over $10M, translating technical insights into strategic business outcomes.</li>
+				<li>Over 2 years of internship and research experience focused on developing ML models for classification, computer vision (YOLOv7, DeepSORT), and NLP tasks, with hands-on experience in tools like Azure Databricks, Tableau, and Power BI.</li>
+			  </ul>			  
+	  
+			  <!-- Buttons -->
+			  <div class="mt-4">
+				<button class="btn btn-primary filter-button mb-2" onclick="toggleSection('lang')">Languages</button>
+				<button class="btn btn-primary filter-button mb-2" onclick="toggleSection('frontend')">Front End Tools</button>
+				<button class="btn btn-primary filter-button mb-2" onclick="toggleSection('libs')">Python Libraries</button>
+				<button class="btn btn-primary filter-button mb-2" onclick="toggleSection('tools')">Tools</button>
+				<button class="btn btn-primary filter-button mb-2" onclick="toggleSection('models')">ML/DL Models</button>
+			  </div>
+	  
+			  <!-- Toggleable Lists -->
+			  <ul id="lang" class="coursework text-left mx-auto" style="display: none; max-width: 800px; margin-top: 10px;">
+				<li><strong>Languages:</strong> C, C++, Python, DataWeave, MATLAB, Ruby, R</li>
 			  </ul>
 	  
-			  <ul class="about-info mt-4 px-md-0 px-2">
-				<li class="d-flex"><span>Education:</span> <span>Master of Science (M.S.)</span></li>
-				<li class="d-flex"><span>Languages:</span> <span>C, Python, DataWeave, MATLAB, Java, Ruby, R</span></li>
-				<li class="d-flex"><span>Front End Tools:</span> <span>HTML5, CSS, React, Bootstrap, AJAX, NodeJS, AngularJS</span></li>
-				<li class="d-flex"><span>Python libraries:</span> <span>OpenCV, TensorFlow, Keras, PyTorch, Matplotlib, NumPy, SciPy, PyGSP, Scikit, Pandas, SciPy, NLTK</span></li>
-				<li class="d-flex"><span>Tools:</span> <span>SQL, MuleSoft, Azure, AWS, GCP, Kafka, Spring, REST, SOAP API, Jenkins, Tableau, Git, Anaconda, Kubernetes, Docker, OpenShift, MongoDB, 
-				  Oracle, Scala, SAP, Hadoop, DevOps, Altreyx, Salesforce, Spark, MapReduce, Postman, Jupyter</span></li>
-				<li class="d-flex"><span>Models:</span> <span>Regression, SVM, kNN, Decision Trees, XGBoost, Autoencoder, PCA, Convolutional Neural Networks (CNNs), 
-				  ResNet, Generative Adversarial Networks (GANs), Recurrent Neural Networks (RNNs), Transformer, LSTM, Large Language Models (LLM), BERT, GPT</span></li>
+			  <ul id="frontend" class="coursework text-left mx-auto" style="display: none; max-width: 800px; margin-top: 10px;">
+				<li><strong>Front End Tools:</strong> HTML5, CSS, PHP, Laravel, React, Bootstrap, NodeJS, AngularJS</li>
 			  </ul>
+	  
+			  <ul id="libs" class="coursework text-left mx-auto" style="display: none; max-width: 800px; margin-top: 10px;">
+				<li><strong>Python Libraries:</strong> OpenCV, TensorFlow, Keras, PyTorch, Matplotlib, NumPy, SciPy, PyGSP, Scikit, Pandas, SciPy, NLTK</li>
+			  </ul>
+	  
+			  <ul id="tools" class="coursework text-left mx-auto" style="display: none; max-width: 800px; margin-top: 10px;">
+				<li><strong>Tools:</strong> SQL, Salesforce Cloud, MuleSoft, Azure, AWS, Kafka, Spring, REST, SOAP API, Jenkins, Tableau, Git, PowerBI, Kubernetes, Docker, OpenShift, MongoDB, Oracle, SAP, Hadoop, JIRA, Splunk, MapReduce, Airflow, Postman, Jupyter</li>
+			  </ul>
+	  
 			</div>
 		  </div>
 		</div>
-	  </section>	  
+	</section>
+			
 
     <section class="ftco-section ftco-no-pb" id="resume-section">
     	<div class="container">
@@ -245,19 +263,17 @@
           	<h1 class="big big-2">Resume</h1>
             <h2 class="mb-4">Resume</h2>
             <p>
-				MS CS student at Texas A&M, graduating in May 2025, with 3+ years of experience in API integration, 
-				full-stack development, cloud platforms, data analytics, and developing ETL pipelines. 
-				Skilled in writing and maintaining test cases, and actively seeking Software and Data Engineering roles.
-			  </p>
+				To learn more about my background and experience, feel free to view my resume here.
+			</p>			  
 			
 				<div class="row justify-content-center mt-5">
 					<div class="col-md-6 text-center ftco-animate">
 						<p>
-							<a href="https://drive.google.com/file/d/1ABCDefGhIJklMNOPQRStuvWXyz/view?usp=sharing"
+							<a href="https://drive.google.com/file/d/1PWR1cA36PscNBdLfr8b-JKgwihapBqC2/view?usp=sharing"
 							   class="btn btn-primary py-4 px-5"
 							   target="_blank" 
 							   rel="noopener noreferrer">
-							  Download CV
+							  Download Resume
 							</a>
 						  </p>
 					</div>
@@ -707,27 +723,7 @@
 
     <div class="container">
     <br>
-    <br>
-	<br>
-	<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-	  <li class="ftco-animate normal-txt">Find me on</li>
-	  <li class="ftco-animate">
-		<a href="https://www.youtube.com/channel/UCeNtFe9uoqMzKDkl-3F86Wg" target="_blank" rel="noopener noreferrer">
-		  <span class="icon-youtube"></span>
-		</a>
-	  </li>
-	  <li class="ftco-animate">
-		<a href="https://www.linkedin.com/in/mohit-sarin26/" target="_blank" rel="noopener noreferrer">
-		  <span class="icon-linkedin"></span>
-		</a>
-	  </li>
-	  <li class="ftco-animate">
-		<a href="https://www.instagram.com/mohit_sarin26/" target="_blank" rel="noopener noreferrer">
-		  <span class="icon-instagram"></span>
-		</a>
-	  </li>
-	</ul>
-	<br>	
+    <br>	
      </div>
  </div>
 </section>
@@ -764,6 +760,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   <script src="js/scrollax.min.js"></script>
   
   <script src="js/main.js"></script>
+  <script>
+	function toggleSection(id) {
+	  const section = document.getElementById(id);
+	  section.style.display = (section.style.display === "none" || section.style.display === "") ? "block" : "none";
+	}
+  </script>
     
   </body>
 </html>
