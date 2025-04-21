@@ -121,6 +121,11 @@
 
 
   </head>
+  <style>
+	.hidden {
+	  display: none !important;
+	}
+  </style>  
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
 	  
@@ -978,36 +983,36 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   </script>
   <script>
 	document.addEventListener('DOMContentLoaded', function () {
-	  // Debug outputs
-	  console.log('DOM loaded for filtering');
+		const filterButtons = document.querySelectorAll('.project-filter[data-filter]');
+		const projectEntries = document.querySelectorAll('.project-entry');
 	  
-	  const filterButtons = document.querySelectorAll('.project-filter[data-filter]');
+		console.log('Filter Buttons:', filterButtons);
+		console.log('Project Entries:', projectEntries);
 	  
-	  const projectEntries = document.querySelectorAll('.project-entry');
-	
-	  filterButtons.forEach(button => {
-		button.addEventListener('click', function () {
-		  const filter = this.getAttribute('data-filter');
-		  console.log('Filter clicked:', filter);
-	
-		  projectEntries.forEach(entry => {
-			const categories = entry.getAttribute('data-category');
-			console.log('Entry categories:', categories);
-			
-			if (filter === 'all' || (categories && categories.split(' ').includes(filter))) {
-				entry.style.setProperty('display', 'flex', 'important');
-			} else {
-				entry.style.setProperty('display', 'flex', 'important');
-			}
+		filterButtons.forEach(button => {
+		  button.addEventListener('click', function () {
+			const filter = this.getAttribute('data-filter');
+			console.log('Filter clicked:', filter);
+	  
+			projectEntries.forEach(entry => {
+			  const categories = entry.getAttribute('data-category');
+			  console.log('Entry categories:', categories);
+	  
+			  if (filter === 'all' || categories.split(' ').includes(filter)) {
+				entry.classList.remove('hidden');
+			  } else {
+				entry.classList.add('hidden');
+			  }
+			});
 		  });
 		});
+	  
+		// Show all initially
+		projectEntries.forEach(entry => {
+		  entry.classList.remove('hidden');
+		});
 	  });
-	
-	  // Show all on initial load
-	  projectEntries.forEach(entry => {
-		entry.style.display = 'flex';
-	  });
-	});
+	  
 	</script>
   </body>
 </html>
