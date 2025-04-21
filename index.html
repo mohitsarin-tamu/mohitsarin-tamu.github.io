@@ -828,7 +828,7 @@
 		</style>
 	  
 		<!-- Script inclusion -->
-		<script src="scripts.js"></script>
+		<!-- <script src="scripts.js"></script> -->
 
 	  </section>
 	  
@@ -975,7 +975,40 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	  section.style.display = (section.style.display === "none" || section.style.display === "") ? "block" : "none";
 	}
   </script>
-
-
+  <script>
+	document.addEventListener('DOMContentLoaded', function () {
+	  // Debug outputs
+	  console.log('DOM loaded for filtering');
+	  
+	  const filterButtons = document.querySelectorAll('.filter-button[data-filter]');
+	  console.log('Filter buttons found:', filterButtons.length);
+	  
+	  const projectEntries = document.querySelectorAll('.project-entry');
+	  console.log('Project entries found:', projectEntries.length);
+	
+	  filterButtons.forEach(button => {
+		button.addEventListener('click', function () {
+		  const filter = this.getAttribute('data-filter');
+		  console.log('Filter clicked:', filter);
+	
+		  projectEntries.forEach(entry => {
+			const categories = entry.getAttribute('data-category');
+			console.log('Entry categories:', categories);
+			
+			if (filter === 'all' || (categories && categories.split(' ').includes(filter))) {
+			  entry.style.display = 'flex';
+			} else {
+			  entry.style.display = 'none';
+			}
+		  });
+		});
+	  });
+	
+	  // Show all on initial load
+	  projectEntries.forEach(entry => {
+		entry.style.display = 'flex';
+	  });
+	});
+	</script>
   </body>
 </html>
