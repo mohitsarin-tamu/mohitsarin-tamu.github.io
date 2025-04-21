@@ -982,10 +982,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	  console.log('DOM loaded for filtering');
 	  
 	  const filterButtons = document.querySelectorAll('.project-filter[data-filter]');
-	  console.log('Filter buttons found:', filterButtons.length);
 	  
 	  const projectEntries = document.querySelectorAll('.project-entry');
-	  console.log('Project entries found:', projectEntries.length);
 	
 	  filterButtons.forEach(button => {
 		button.addEventListener('click', function () {
@@ -997,9 +995,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			console.log('Entry categories:', categories);
 			
 			if (filter === 'all' || (categories && categories.split(' ').includes(filter))) {
-			  entry.style.display = 'flex';
+				entry.style.setProperty('display', 'flex', 'important');
 			} else {
-			  entry.style.display = 'none';
+				entry.style.setProperty('display', 'flex', 'important');
 			}
 		  });
 		});
