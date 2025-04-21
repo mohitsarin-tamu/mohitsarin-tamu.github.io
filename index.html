@@ -958,29 +958,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <script>
-	document.addEventListener('DOMContentLoaded', function() {
-	  // Set all projects visible by default
-	  filterProjects('all');
-	});
-  
-	function filterProjects(category) {
-	  const entries = document.querySelectorAll('.project-entry');
-	  console.log('Found', entries.length, 'project entries');
-	  
-	  entries.forEach(entry => {
-		const categories = entry.getAttribute('data-category').split(" ");
-		console.log('Project categories:', categories);
-		
-		if (category === 'all' || categories.includes(category)) {
-		  entry.style.display = 'flex';
-		} else {
-		  entry.style.display = 'none';
-		}
-	  });
-	}
-  </script> 
-  
   <script src="js/main.js"></script>
   <script>
 	function toggleSection(id) {
