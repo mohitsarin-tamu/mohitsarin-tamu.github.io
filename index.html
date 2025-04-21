@@ -149,7 +149,7 @@
 	      	<div class="overlay"></div>
 	         <div class="container">
 	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/IMG-20250121-WA0073.jpg); margin-top: 200px;">
+	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/IMG-20250121-WA0073.jpg); margin-top: 100px;">
 	          	 <div class="overlay"></div>
 	          	</div>
 		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
@@ -165,31 +165,42 @@
 						// Initialize the typing animation
 						const typingAnimationElement = document.getElementById('typing-animation');
 
-						// Create an array of typing text
-						const typingTexts = [
-						'Software Developer  ',
-						'Cloud Engineer   ',
-						'Data Scientist  ',
-						];
+						if (!window.typingAnimationInitialized) {
+							window.typingAnimationInitialized = true;
+							
+							// Create an array of typing text
+							const typingTexts = [
+								'Software Developer  ',
+								'Cloud Engineer   ',
+								'Data Scientist  ',
+							];
 
-						// Create a function to display the typing animation for a given text
-						function playTypingAnimation(text) {
-						// Loop through each character and add it to the element
-						for (let i = 0; i < text.length; i++) {
-							setTimeout(() => {
-							typingAnimationElement.textContent += text[i];
-							}, i * 200); // Increase the delay to slow down the typing animation
-						}
+							// Create a function to display the typing animation for a given text
+							function playTypingAnimation(text) {
+								// Clear existing content first
+								typingAnimationElement.textContent = '';
+								
+								// Loop through each character and add it to the element
+								let i = 0;
+								const typeNextChar = () => {
+								if (i < text.length) {
+									typingAnimationElement.textContent += text[i];
+									i++;
+									setTimeout(typeNextChar, 200);
+								} else {
+									// Once the animation is complete, reset the text and start over
+									setTimeout(() => {
+									playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+									}, 1000);
+								}
+								};
+								
+								typeNextChar();
+							}
 
-						// Once the animation is complete, reset the text and start over
-						setTimeout(() => {
-							typingAnimationElement.textContent = '';
-							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-						}, text.length * 200);
-						}
-
-						// Start the typing animation loop
-						playTypingAnimation(typingTexts[0]);
+							// Start the typing animation loop
+							playTypingAnimation(typingTexts[0]);
+							}
 
 						</script>
 
@@ -824,7 +835,7 @@
 	  
 	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
 	
-	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
+	<div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
 			<!-- <div class="container"> -->
 				<div class="row justify-content-center">
 					<div class="col-md-7 ftco-animate text-center">
