@@ -123,8 +123,92 @@
   </head>
   <style>
 	.hidden {
-	  display: none !important;
+		display: none !important;
 	}
+		/* Improved responsive styling for the hero section */
+		.hero-text-container {
+		  padding-right: 15px;
+		  padding-left: 15px;
+		  padding-bottom: 40px;
+		  padding-top: 40px;
+		}
+	
+		@media (max-width: 991px) {
+		  .hero-image-container {
+			margin-top: 50px !important;
+			padding-bottom: 20px;
+		  }
+		  
+		  .hero-text-container {
+			padding-top: 20px;
+			text-align: center;
+		  }
+		}
+	
+		/* Ensure the image container has proper spacing */
+		.hero-image-container {
+		  padding-top: 100px;
+		  padding-bottom: 40px;
+		  position: relative;
+		}
+	
+		/* Preserve the original typing animation styling */
+		#typing-animation {
+		  position: relative;
+		  font-size: 30px;
+		  font-weight: bold;
+		  color: rgb(255, 255, 255);
+		  overflow: hidden;
+		  white-space: nowrap;
+		  animation: typing 3s steps(20, end) infinite;
+		}
+	
+		#typing-animation:before {
+		  content: "";
+		  top: 0;
+		  left: 0;
+		  width: 0;
+		  height: 100%;
+		  background-color: #ccc;
+		  animation: typing-cursor 0.5s ease-in-out infinite;
+		}
+	
+		@keyframes typing {
+		  from {
+			width: 0;
+		  }
+		  to {
+			width: 100%;
+		  }
+		}
+	
+		@keyframes typing-cursor {
+		  from {
+			width: 5px;
+		  }
+		  to {
+			width: 0;
+		  }
+		}
+	
+		/* Adjust the main name heading to be responsive */
+		.hero-main-heading {
+		  font-size: clamp(28px, 4vw, 40px);
+		  margin-bottom: 20px;
+		  margin-top: 15px;
+		}
+	
+		/* Ensure buttons stack nicely on small screens */
+		.hero-buttons {
+		  display: flex;
+		  flex-wrap: wrap;
+		  gap: 10px;
+		  margin-top: 20px;
+		}
+	
+		.hero-buttons .btn {
+		  margin: 5px;
+		}
   </style>  
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
@@ -149,80 +233,84 @@
 	    </div>
 	  </nav>
 	  <section id="home-section" class="hero">
-		  <div class="home-slider  owl-carousel">
-	       <div class="slider-item ">
-	      	<div class="overlay"></div>
-	         <div class="container">
-	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/IMG-20250121-WA0073.jpg); margin-top: 100px;">
-	          	 <div class="overlay"></div>
-	          	</div>
-		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
-		          	<div class="text">
-		          		<span class="subheading">Howdy!</span>
-			            <h1 class="mb-4 mt-3">I'm <span>Mohit Sarin</span></h1>
-
-						<!-- Element to contain animated typing -->
-						<span id="typing-animation"></span>
-
-						<script>
-
-						// Initialize the typing animation
-						const typingAnimationElement = document.getElementById('typing-animation');
-
-						if (!window.typingAnimationInitialized) {
-							window.typingAnimationInitialized = true;
-							
-							// Create an array of typing text
-							const typingTexts = [
-								'Software Developer  ',
-								'Cloud Engineer   ',
-								'Data Scientist  ',
-							];
-
-							// Create a function to display the typing animation for a given text
-							function playTypingAnimation(text) {
-								// Clear existing content first
-								typingAnimationElement.textContent = '';
-								
-								// Loop through each character and add it to the element
-								let i = 0;
-								const typeNextChar = () => {
-								if (i < text.length) {
-									typingAnimationElement.textContent += text[i];
-									i++;
-									setTimeout(typeNextChar, 200);
-								} else {
-									// Once the animation is complete, reset the text and start over
-									setTimeout(() => {
-									playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-									}, 1000);
-								}
-								};
-								
-								typeNextChar();
-							}
-
-							// Start the typing animation loop
-							playTypingAnimation(typingTexts[0]);
-							}
-
-						</script>
-
-						<br>
-						<br>
-			            <p><a href="https://www.linkedin.com/in/mohit-sarin26/" class="btn btn-primary py-3 px-4">LinkedIn</a> 
-							<a href="https://github.com/mohitsarin-tamu" class="btn btn-white btn-outline-white py-3 px-4">GitHub</a>
-							<a href="mailto:mohitsarin26@tamu.edu" class="btn btn-white btn-outline-white py-3 px-6">Email</a>
-						</p>
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
+		<div class="home-slider owl-carousel">
+		  <div class="slider-item">
+			<div class="overlay"></div>
+			<div class="container">
+			  <div class="row d-flex align-items-center">
+				<!-- Image Column - Push to the end on medium+ screens -->
+				<div class="col-lg-5 hero-image-container order-lg-2">
+				  <div class="img" style="background-image:url(images/IMG-20250121-WA0073.jpg);">
+					<div class="overlay"></div>
+				  </div>
+				</div>
+				
+				<!-- Text Column - Pull to start on medium+ screens -->
+				<div class="col-lg-7 hero-text-container order-lg-1 d-flex align-items-center">
+				  <div class="text">
+					<span class="subheading">Howdy!</span>
+					<h1 class="hero-main-heading">I'm <span>Mohit Sarin</span></h1>
+					
+					<!-- Element to contain animated typing -->
+					<span id="typing-animation"></span>
+					
+					<!-- Original script for the typing animation -->
+					<script>
+					// Initialize the typing animation
+					const typingAnimationElement = document.getElementById('typing-animation');
+	
+					if (!window.typingAnimationInitialized) {
+					  window.typingAnimationInitialized = true;
+					  
+					  // Create an array of typing text
+					  const typingTexts = [
+						'Software Developer  ',
+						'Cloud Engineer   ',
+						'Data Scientist  ',
+					  ];
+	
+					  // Create a function to display the typing animation for a given text
+					  function playTypingAnimation(text) {
+						// Clear existing content first
+						typingAnimationElement.textContent = '';
+						
+						// Loop through each character and add it to the element
+						let i = 0;
+						const typeNextChar = () => {
+						if (i < text.length) {
+						  typingAnimationElement.textContent += text[i];
+						  i++;
+						  setTimeout(typeNextChar, 200);
+						} else {
+						  // Once the animation is complete, reset the text and start over
+						  setTimeout(() => {
+						  playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+						  }, 1000);
+						}
+						};
+						
+						typeNextChar();
+					  }
+	
+					  // Start the typing animation loop
+					  playTypingAnimation(typingTexts[0]);
+					}
+					</script>
+					
+					<br>
+					<br>
+					<div class="hero-buttons">
+					  <a href="https://www.linkedin.com/in/mohit-sarin26/" class="btn btn-primary py-3 px-4">LinkedIn</a>
+					  <a href="https://github.com/mohitsarin-tamu" class="btn btn-white btn-outline-white py-3 px-4">GitHub</a>
+					  <a href="mailto:mohitsarin26@tamu.edu" class="btn btn-white btn-outline-white py-3 px-6">Email</a>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
 		</div>
-    </section>
-  
+	  </section>
 
 	<section class="ftco-about img ftco-section ftco-no-pb text-center" id="about-section">
 		<div class="container">
