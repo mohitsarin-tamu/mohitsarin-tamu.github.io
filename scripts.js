@@ -1,6 +1,11 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const filterButtons = document.querySelectorAll('.filter-button');
   const projectEntries = document.querySelectorAll('.project-entry');
+
+  // Show all projects initially
+  projectEntries.forEach(entry => {
+    entry.style.display = 'flex';
+  });
 
   filterButtons.forEach(button => {
     button.addEventListener('click', function () {
