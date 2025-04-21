@@ -483,10 +483,11 @@
 				  <h2 class="mb-4">Projects</h2>
 				  <div class="underline"></div>
 				  <div class="mt-3">
-					<button class="btn btn-primary filter-button" onclick="filterProjects('all')">All</button>
-					<button class="btn btn-primary filter-button" onclick="filterProjects('ml')">Machine Learning</button>
-					<button class="btn btn-primary filter-button" onclick="filterProjects('software')">Software</button>
-					<button class="btn btn-primary filter-button" onclick="filterProjects('cloud')">Cloud & Analytics</button>
+					<button class="btn btn-primary filter-button" data-filter="all">All</button>
+					<button class="btn btn-primary filter-button" data-filter="ml">Machine Learning</button>
+					<button class="btn btn-primary filter-button" data-filter="software">Software</button>
+					<button class="btn btn-primary filter-button" data-filter="cloud">Cloud & Analytics</button>
+
 				  </div>
 				  
 				</div>
@@ -956,15 +957,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
   <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  
-  <script src="js/main.js"></script>
-  <script>
-	function toggleSection(id) {
-	  const section = document.getElementById(id);
-	  section.style.display = (section.style.display === "none" || section.style.display === "") ? "block" : "none";
-	}
-  </script>
-
   <script>
 	document.addEventListener('DOMContentLoaded', function() {
 	  // Set all projects visible by default
@@ -987,5 +979,15 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	  });
 	}
   </script> 
+  
+  <script src="js/main.js"></script>
+  <script>
+	function toggleSection(id) {
+	  const section = document.getElementById(id);
+	  section.style.display = (section.style.display === "none" || section.style.display === "") ? "block" : "none";
+	}
+  </script>
+
+
   </body>
 </html>
