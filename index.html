@@ -494,10 +494,11 @@
 				  <h2 class="mb-4">Projects</h2>
 				  <div class="underline"></div>
 				  <div class="mt-3">
-					<button class="btn btn-primary filter-button" data-filter="all">All</button>
-				<button class="btn btn-primary filter-button" data-filter="ml">Machine Learning</button>
-				<button class="btn btn-primary filter-button" data-filter="software">Software</button>
-				<button class="btn btn-primary filter-button" data-filter="cloud">Cloud & Analytics</button>
+					<button class="btn btn-primary project-filter" data-filter="all">All</button>
+					<button class="btn btn-primary project-filter" data-filter="ml">Machine Learning</button>
+					<button class="btn btn-primary project-filter" data-filter="software">Software</button>
+					<button class="btn btn-primary project-filter" data-filter="cloud">Cloud & Analytics</button>
+
 
 				  </div>
 				  
@@ -980,7 +981,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	  // Debug outputs
 	  console.log('DOM loaded for filtering');
 	  
-	  const filterButtons = document.querySelectorAll('.filter-button[data-filter]');
+	  const filterButtons = document.querySelectorAll('.project-filter[data-filter]');
 	  console.log('Filter buttons found:', filterButtons.length);
 	  
 	  const projectEntries = document.querySelectorAll('.project-entry');
